@@ -8,11 +8,6 @@ req = urllib.request.Request(projecturl)
 res = urllib.request.urlopen(req)
 jsonData = json.loads(res.read())
 
-ymst = "5c8d0988d52c3100174cd0d2"
-inue = "5e744f3760095e0017e4ec9c"
-ymgc = "5e74530b2e5c97001785d3a6"
-
-
 def show_title_list():
     for item in jsonData["pages"]:
         title = item["title"]
@@ -50,10 +45,7 @@ def load_updated_title_list():
         if enddate > created > startdate:
             print("[" + title + "]")#コピペでリンクになるようにする。
 
-def load_jsondata():
-    return "1"
-
 if __name__ == "__main__":
-    load_created_title_list_2()
+    load_created_title_list()
     #load_updated_title_list()
     #show_title_list
